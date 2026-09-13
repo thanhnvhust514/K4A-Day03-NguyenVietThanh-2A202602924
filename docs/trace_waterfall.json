@@ -3,9 +3,9 @@
     "step": 1,
     "query": "Chào bạn, bạn có thể giới thiệu quy chế học vụ cơ bản của Đại học VinUni không?",
     "action_type": "FINAL_ANSWER",
-    "thought": "Câu hỏi chung về quy chế học vụ, trả lời trực tiếp không cần gọi Tool.",
-    "output": "[Mock Agent Response]: Xin chào! Quy chế học vụ VinUni yêu cầu sinh viên tích lũy tối thiểu 120 tín chỉ và duy trì GPA trên 2.0 để tốt nghiệp.",
-    "latency_ms": 2845.93
+    "thought": "Gemini phản hồi trực tiếp bằng văn bản (không cần gọi công cụ).",
+    "output": "Chào bạn! Mình là Trợ lý Học vụ Thông minh của Đại học VinUni. Dưới đây là những điểm cơ bản trong **Quy chế Học vụ của Đại học VinUni** mà sinh viên cần nắm rõ:\n\n---\n\n### 1. **Hệ thống Đánh giá & Thang điểm (Grading System)**\n* **Thang điểm chữ (Letter Grade):** VinUni áp dụng thang điểm từ **A đến F** kết hợp với hệ số điểm trung bình (GPA) trên thang **4.0**:\n  * **A / A-**: Xuất sắc (3.7 - 4.0)\n  * **B+ / B / B-**: Giỏi / Khá (2.7 - 3.3)\n  * **C+ / C / C-**: Trung bình (1.7 - 2.3)\n  * **D / D+**: Yếu nhưng đạt (1.0 - 1.3)\n  * **F**: Không đạt (0.0) — *Phải học lại môn học.*\n* **Điểm GPA:** \n  * **Cumulative GPA (cGPA):** Điểm trung bình tích lũy toàn khóa.\n  * **Semester GPA (sGPA):** Điểm trung bình của từng học kỳ.\n\n---\n\n### 2. **Điều kiện Tốt nghiệp & Cảnh báo Học tập (Academic Standing)**\n* **Cảnh báo học tập (Academic Probation):** Sinh viên có sGPA hoặc cGPA giảm xuống dưới mức tối thiểu theo quy định (thường là dưới **2.0/4.0**) sẽ nhận cảnh báo học tập và cần làm việc với Cố vấn Học tập (Academic Advisor).\n* **Điều kiện tốt nghiệp:**\n  * Hoàn thành đủ số tín chỉ theo yêu cầu của chương trình đào tạo.\n  * cGPA đạt từ **2.0/4.0** trở lên.\n  * Đáp ứng chuẩn đầu ra về Ngoại ngữ, Kỹ năng và Hoạt động Cộng đồng/Thực tập theo quy định của từng Viện.\n\n---\n\n### 3. **Chính sách Điểm danh & Chuyên cần (Attendance Policy)**\n* Sinh viên được yêu cầu tham gia tối thiểu **80%** số buổi học trên lớp (Lecture/Discussion/Lab).\n* Vắng mặt quá số buổi cho phép mà không có lý do chính đáng có thể dẫn đến việc bị hủy kết quả học phần hoặc nhận điểm **F**.\n\n---\n\n### 4. **Liêm chính Học thuật (Academic Integrity)**\n* VinUni áp dụng chính sách nghiêm ngặt đối với các hành vi vi phạm liêm chính học thuật như: **giao dịch bài làm, đạo văn (plagiarism), gian lận thi cử, sử dụng công cụ AI không đúng quy định**.\n* Các mức xử lý vi phạm: Nhận điểm 0 cho bài tập/bài thi, trượt môn học (điểm F), đình chỉ học tập hoặc buộc xuất học.\n\n---\n\n### 5. **Hỗ trợ Sinh viên (Academic Support)**\n* Mỗi sinh viên được phân công một **Cố vấn Học tập (Academic Advisor)** đồng hành trong suốt quá trình học tập.\n* Sinh viên có thể sử dụng các dịch vụ đặt lịch tư vấn học vụ, hỗ trợ thư viện, gia hạn sách hoặc tư vấn tâm lý học đường.\n\n---\n\n📌 *Nếu bạn cần kiểm tra hồ sơ học vụ cá nhân hoặc đặt lịch hẹn với Cố vấn Học tập, bạn chỉ cần cung cấp **Mã sinh viên** (ví dụ: `SV2026001`) để mình hỗ trợ nhé!*",
+    "latency_ms": 8425.59
   },
   {
     "step": 1,
@@ -15,15 +15,111 @@
     "arguments": {
       "student_id": "SV2026001"
     },
-    "observation": {},
-    "latency_ms": 799.12
+    "observation": {
+      "status": "SUCCESS",
+      "student_id": "SV2026001",
+      "data": {
+        "full_name": "Nguyễn Văn An",
+        "class": "AI-K4",
+        "gpa": 3.85,
+        "email": "an.nv@vinuni.edu.vn",
+        "status": "Đang học",
+        "advisor": "PGS.TS Nguyễn Văn A"
+      }
+    },
+    "latency_ms": 3059.52
   },
   {
     "step": 2,
     "query": "Hãy tra cứu thông tin học vụ của sinh viên SV2026001.",
     "action_type": "FINAL_ANSWER",
     "thought": "Tổng hợp kết quả từ MCP Server thành công.",
-    "output": "Chưa thể trả lời chi tiết do chưa nhận được dữ liệu từ MCP Server (hãy hoàn thành TODO 2.1).",
+    "output": "Kết quả tra cứu cho sinh viên SV2026001 (Nguyễn Văn An): Lớp AI-K4, GPA: 3.85, Email: an.nv@vinuni.edu.vn, Trạng thái: Đang học, Cố vấn: PGS.TS Nguyễn Văn A.",
+    "latency_ms": 10.0
+  },
+  {
+    "step": 1,
+    "query": "Tôi muốn gia hạn cuốn sách mã B2026001 thêm 7 ngày cho sinh viên mã SV2026001.",
+    "action_type": "TOOL_EXECUTION",
+    "tool_name": "renew_book",
+    "arguments": {
+      "days": 7,
+      "book_id": "B2026001",
+      "student_id": "SV2026001"
+    },
+    "observation": {
+      "status": "SUCCESS",
+      "transaction_id": "LIB-SV2026001-B2026001",
+      "student_id": "SV2026001",
+      "book_id": "B2026001",
+      "book_title": "Machine Learning Yearning",
+      "extended_days": 7,
+      "new_due_date": "27/09/2026",
+      "message": "Đã gia hạn thành công cuốn sách 'Machine Learning Yearning' (B2026001) thêm 7 ngày cho sinh viên SV2026001. Hạn trả mới: 27/09/2026."
+    },
+    "latency_ms": 2273.29
+  },
+  {
+    "step": 2,
+    "query": "Tôi muốn gia hạn cuốn sách mã B2026001 thêm 7 ngày cho sinh viên mã SV2026001.",
+    "action_type": "FINAL_ANSWER",
+    "thought": "Tổng hợp kết quả từ MCP Server thành công.",
+    "output": "Đã gia hạn thành công cuốn sách 'Machine Learning Yearning' (B2026001) thêm 7 ngày cho sinh viên SV2026001. Hạn trả mới: 27/09/2026.",
+    "latency_ms": 10.0
+  },
+  {
+    "step": 1,
+    "query": "Tôi là sinh viên SV2026001, hãy kiểm tra xem cuốn sách B2026001 có đang sẵn sàng không, nếu có hãy đăng ký mượn giúp tôi.",
+    "action_type": "TOOL_EXECUTION",
+    "tool_name": "library_query",
+    "arguments": {
+      "book_id": "B2026001"
+    },
+    "observation": {
+      "status": "SUCCESS",
+      "book_id": "B2026001",
+      "data": {
+        "title": "Machine Learning Yearning",
+        "author": "Andrew Ng",
+        "category": "Trí tuệ nhân tạo / Khoa học máy tính",
+        "status": "Đang được mượn",
+        "borrower_id": "SV2026001",
+        "due_date": "20/09/2026",
+        "location": "Kệ A3-Tầng 2 Thư viện VinUni"
+      },
+      "message": "Cuốn sách 'Machine Learning Yearning' (Mã: B2026001) của tác giả Andrew Ng. Tình trạng: Đang được mượn. Vị trí: Kệ A3-Tầng 2 Thư viện VinUni."
+    },
+    "latency_ms": 2215.67
+  },
+  {
+    "step": 2,
+    "query": "Tôi là sinh viên SV2026001, hãy kiểm tra xem cuốn sách B2026001 có đang sẵn sàng không, nếu có hãy đăng ký mượn giúp tôi.",
+    "action_type": "FINAL_ANSWER",
+    "thought": "Tổng hợp kết quả từ MCP Server thành công.",
+    "output": "Cuốn sách 'Machine Learning Yearning' (Mã: B2026001) của tác giả Andrew Ng. Tình trạng: Đang được mượn. Vị trí: Kệ A3-Tầng 2 Thư viện VinUni.",
+    "latency_ms": 10.0
+  },
+  {
+    "step": 1,
+    "query": "Hãy tra cứu tình trạng của cuốn sách B9999999.",
+    "action_type": "TOOL_EXECUTION",
+    "tool_name": "library_query",
+    "arguments": {
+      "book_id": "B9999999"
+    },
+    "observation": {
+      "status": "NOT_FOUND",
+      "book_id": "B9999999",
+      "message": "Không tìm thấy thông tin cuốn sách có mã 'B9999999' trong cơ sở dữ liệu thư viện VinUni."
+    },
+    "latency_ms": 8035.94
+  },
+  {
+    "step": 2,
+    "query": "Hãy tra cứu tình trạng của cuốn sách B9999999.",
+    "action_type": "FINAL_ANSWER",
+    "thought": "Tổng hợp kết quả từ MCP Server thành công.",
+    "output": "Không tìm thấy thông tin cuốn sách có mã 'B9999999' trong cơ sở dữ liệu thư viện VinUni.",
     "latency_ms": 10.0
   }
 ]

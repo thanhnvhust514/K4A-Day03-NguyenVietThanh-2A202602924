@@ -1,0 +1,37 @@
+[
+  {
+    "id": "TC01",
+    "type": "direct_query",
+    "question": "Chào bạn, bạn có thể giới thiệu quy chế học vụ cơ bản của Đại học VinUni không?",
+    "expected_behavior": "Chatbot trả lời trực tiếp từ System Prompt, không cần gọi bất kỳ Tool nào.",
+    "complexity": "Low"
+  },
+  {
+    "id": "TC02",
+    "type": "single_tool_query",
+    "question": "Hãy tra cứu thông tin học vụ của sinh viên SV2026001.",
+    "expected_behavior": "Agent nhận diện nhu cầu tra cứu, tự động phát sinh Tool Call 'academic_query' với mã SV2026001.",
+    "complexity": "Medium"
+  },
+  {
+    "id": "TC03",
+    "type": "appointment_booking",
+    "question": "Tôi muốn gia hạn cuốn sách mã B2026001 thêm 7 ngày cho sinh viên mã SV2026001.",
+    "expected_behavior": "Agent tự động phát sinh Tool Call gia hạn sách với đúng mã sách và mã sinh viên.",
+    "complexity": "Medium"
+  },
+  {
+    "id": "TC04",
+    "type": "multi_step_reasoning",
+    "question": "Tôi là sinh viên SV2026001, hãy kiểm tra xem cuốn sách B2026001 có đang sẵn sàng không, nếu có hãy đăng ký mượn giúp tôi.",
+    "expected_behavior": "Agent thực hiện chuỗi suy luận ReAct: Tra cứu tình trạng sách trước, sau đó nếu sách còn trống thì gọi tool mượn sách.",
+    "complexity": "High"
+  },
+  {
+    "id": "TC05",
+    "type": "edge_case_handling",
+    "question": "Hãy tra cứu tình trạng của cuốn sách B9999999.",
+    "expected_behavior": "Agent nhận kết quả NOT_FOUND từ Tool và đưa ra phản hồi không tìm thấy sách lịch sự, chính xác.",
+    "complexity": "Medium"
+  }
+]

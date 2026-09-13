@@ -38,14 +38,35 @@ class MockOfflineProvider(BaseLLMProvider):
         prompt_lower = prompt.lower()
         
         # Mô phỏng nhận diện intent gọi Tool
-        if "sv2026001" in prompt_lower and "đặt lịch" in prompt_lower:
+        if "gia hạn" in prompt_lower or ("b2026001" in prompt_lower and "mượn" in prompt_lower):
+            return {
+                "type": "tool_call",
+                "tool_name": "renew_book",
+                "arguments": {"student_id": "SV2026001", "book_id": "B2026001", "days": 7},
+                "thought": "Người dùng muốn gia hạn hoặc mượn cuốn sách B2026001 cho sinh viên SV2026001. Tôi sẽ gọi tool renew_book."
+            }
+        elif "b9999999" in prompt_lower:
+            return {
+                "type": "tool_call",
+                "tool_name": "library_query",
+                "arguments": {"book_id": "B9999999"},
+                "thought": "Người dùng muốn tra cứu tình trạng của cuốn sách B9999999. Tôi sẽ gọi tool library_query."
+            }
+        elif "b2026001" in prompt_lower or "sách" in prompt_lower:
+            return {
+                "type": "tool_call",
+                "tool_name": "library_query",
+                "arguments": {"book_id": "B2026001"},
+                "thought": "Người dùng muốn tra cứu thông tin cuốn sách B2026001. Tôi sẽ gọi tool library_query."
+            }
+        elif "sv2026001" in prompt_lower and "đặt lịch" in prompt_lower:
             return {
                 "type": "tool_call",
                 "tool_name": "schedule_appointment",
                 "arguments": {"student_id": "SV2026001", "datetime_str": "14:00 15/09/2026", "advisor_name": "PGS.TS Nguyễn Văn A"},
                 "thought": "Người dùng yêu cầu đặt lịch hẹn tư vấn cho sinh viên SV2026001. Tôi sẽ gọi tool schedule_appointment."
             }
-        elif "sv2026001" in prompt_lower or "tra cứu" in prompt_lower:
+        elif "sv2026001" in prompt_lower or "thông tin học vụ" in prompt_lower:
             return {
                 "type": "tool_call",
                 "tool_name": "academic_query",
